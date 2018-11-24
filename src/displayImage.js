@@ -6,7 +6,6 @@ class DisplayImage {
     this.context = this.canvas.getContext('2d')
     this.canvas.width = 1
     this.canvas.height = 1
-    this.text = "hello"
 
     this.resetValues()
     this.events()
@@ -54,12 +53,6 @@ class DisplayImage {
       this.resetValues()
       this.filters()
     }.bind(this))
-
-    // document.getElementById('invert').addEventListener("click", function() {
-    //   this.isInverted ? this.isInverted = false : this.isInverted = true
-    //   this.filters()
-    // }.bind(this))
-
   }
 
   filters() {
