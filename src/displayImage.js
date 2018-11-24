@@ -1,6 +1,7 @@
 class DisplayImage {
 
-  constructor() {
+  constructor(message = new Message) {
+    this.message = message
     this.image = document.getElementById('SourceImage')
     this.canvas = document.getElementById('Canvas')
     this.context = this.canvas.getContext('2d')
