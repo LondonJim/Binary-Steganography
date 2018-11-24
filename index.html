@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Edit</title>
+    <link rel="stylesheet" href="./public/styles.css">
+    <script src="./src/message.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="column">
+        <img id="SourceImage" src="">
+      </div>
+      <div class="column">
+          <canvas id="Canvas"></canvas>
+      </div>
+    </div>
+    <div class="top-row">
+      <label for="file-upload" class="custom-button">
+        SELECT FILE
+      </label>
+      <input id="file-upload" type='file' onchange="displayImage.onFileSelected(this)"/>
+      <label id="reset-btn-label" for="reset" class="custom-button">
+        RESET
+      </label>
+      <input id="reset" type='button'/>
+    </div>
+    <script>
+      window.addEventListener('load', function(){
+        displayImage = new DisplayImage
+      });
+    </script>
+  </body>
+</html>

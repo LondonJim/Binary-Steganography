@@ -1,0 +1,56 @@
+body {
+  background: #F4F4F4;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  padding: 5px;
+}
+
+#SourceImage {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+#Canvas {
+  width: 100%;
+  height: auto;
+}
+
+.top-row {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  background-color: #DCD0C0;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 2px;
+  border-radius: 16px;
+  border: 1px solid #373737;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.custom-button:hover {
+  opacity: 1;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="button"] {
+    display: none;
+}
