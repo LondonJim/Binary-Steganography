@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <title>Image Edit</title>
     <link rel="stylesheet" href="./public/styles.css">
-    <script src="./src/message.js" defer></script>
+    <script src="./src/canvasSet.js" defer></script>
     <script src="./src/displayImage.js" defer></script>
+    <script src="./src/readFromImage.js" defer></script>
+    <script src="./src/writetoImage.js" defer></script>
+    <script src="./src/main.js" defer></script>
   </head>
 
   <body>
@@ -21,15 +24,17 @@
       <label for="file-upload" class="custom-button">
         SELECT FILE
       </label>
-      <input id="file-upload" type='file' onchange="displayImage.onFileSelected(this)"/>
+      <input id="file-upload" type='file' onchange="main.displayImage.onFileSelected(this)"/>
       <label id="reset-btn-label" for="reset" class="custom-button">
         RESET
       </label>
       <input id="reset" type='button'/>
     </div>
+    <div id="message"></div>
     <script>
       window.addEventListener('load', function(){
-        displayImage = new DisplayImage
+        main = new Main
+        main.events()
       });
     </script>
   </body>
