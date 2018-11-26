@@ -31,6 +31,8 @@ class ReadFromImage {
 
     let message = returnedString.substring(0, returnedString.indexOf('§§§'))
     this.displayMessage(message)
+
+    return message
   }
 
   displayMessage(message) {

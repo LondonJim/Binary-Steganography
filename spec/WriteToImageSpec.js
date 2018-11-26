@@ -4,10 +4,9 @@ describe ('WriteToImage', function() {
     writeToImage = new WriteToImage
   })
 
-  it ('should convert message to binary numbers', function() {
+  it ('entered string converts to binary array', function() {
     spyOn(writeToImage, 'write')
-    writeToImage.convert("Hello")
-    expect(writeToImage.binIntArray).toEqual([0, 1, 0, 0, 1, 0, 0, 0,
+    expect(writeToImage.convert("Hello")).toEqual([0, 1, 0, 0, 1, 0, 0, 0,
                                               0, 1, 1, 0, 0, 1, 0, 1,
                                               0, 1, 1, 0, 1, 1, 0, 0,
                                               0, 1, 1, 0, 1, 1, 0, 0,
