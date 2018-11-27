@@ -1,10 +1,12 @@
 class ReadFromImage {
 
-  read() {
+  read(image = main.canvasSet.context,
+       width = main.canvasSet.canvas.width,
+       height = main.canvasSet.canvas.height
+      ) {
     let textBin = []
     let parsedBin = []
-    let imageData = main.canvasSet.context
-      .getImageData(0, 0, main.canvasSet.canvas.width, main.canvasSet.canvas.height)
+    let imageData = image.getImageData(0, 0, width, height)
 
     for (let i = 0; i < imageData.data.length; i+=4) {
         textBin.push(imageData.data[i].toString(2))
@@ -13,7 +15,9 @@ class ReadFromImage {
     textBin.forEach((el) => {
       parsedBin.push(el.split('').pop())
     })
+
     this.convert(parsedBin)
+    return parsedBin
   }
 
   convert(binIntArray) {

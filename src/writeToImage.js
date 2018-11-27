@@ -13,12 +13,15 @@ class WriteToImage {
     return binIntArray
   }
 
-  write(binIntArray) {
-    let imageBinaryArray = []
-    let imageData = main.canvasSet.context
-      .getImageData(0, 0, main.canvasSet.canvas.width, main.canvasSet.canvas.height)
+  write(binIntArray,
+        image = main.canvasSet.context,
+        width = main.canvasSet.canvas.width,
+        height = main.canvasSet.canvas.height) {
 
-    for (let i = 0; i < (binArray.length) * 4; i++) {
+    let imageBinaryArray = []
+    let imageData = image.getImageData(0, 0, width, height)
+
+    for (let i = 0; i < (binIntArray.length) * 4; i++) {
       imageBinaryArray.push(imageData.data[i].toString(2))
     }
 
@@ -30,7 +33,10 @@ class WriteToImage {
     for (let i = 0; i < imageBinaryArray.length; i+=4) {
       imageData.data[i] = imageBinaryArray[i]
     }
-    main.canvasSet.context.putImageData(imageData, 0, 0)
+    image.putImageData(imageData, 0, 0)
+
+    console.log(imageData.data)
+    return imageData.data
   }
 
 }
