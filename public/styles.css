@@ -8,7 +8,7 @@ body {
 }
 
 .column {
-  padding: 5px;
+  padding: 0px;
 }
 
 #SourceImage {
@@ -27,13 +27,22 @@ body {
   justify-content: center;
 }
 
+.middle-row {
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+}
+
 .custom-button {
   background-color: #DCD0C0;
   color: black;
-  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 0px 2px;
   border-radius: 16px;
   border: 1px solid #373737;
   display: inline-block;
@@ -52,5 +61,9 @@ input[type="file"] {
 }
 
 input[type="button"] {
+    display: none;
+}
+
+input[type="submit"] {
     display: none;
 }

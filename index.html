@@ -22,11 +22,30 @@
     </div>
     <div class="top-row">
       <label for="file-upload" class="custom-button">
-        SELECT FILE
+        SELECT IMAGE
       </label>
       <input id="file-upload" type='file' onchange="main.displayImage.onFileSelected(this)"/>
       <label id="reset-btn-label" for="reset" class="custom-button">
         RESET
+      </label>
+      <input id="reset" type='button'/>
+      <label id="reset-btn-label" for="reset" class="custom-button">
+        RETRIEVE MESSAGE
+      </label>
+      <input id="reset" type='button'/>
+    </div>
+    <div class="middle-row">
+      <form style="padding: 5px 0px 0px 0px">
+        <textarea name="message-to-add" cols="64" rows="5" placeholder="Message to add to image..."></textarea><br>
+        <label for="submit-message" class="custom-button" style="float: right;">
+          ADD MESSAGE
+        </label>
+        <input id="submit-message" type="submit">
+      </form>
+    </div>
+    <div class="bottom-row">
+      <label id="reset-btn-label" for="reset" class="custom-button" style="margin: -32px 280px 0px 0px; padding: 6px 12px">
+        SAVE IMAGE
       </label>
       <input id="reset" type='button'/>
     </div>

@@ -35,7 +35,6 @@ class WriteToImage {
     }
     image.putImageData(imageData, 0, 0)
 
-    console.log(imageData.data)
     return imageData.data
   }
 
