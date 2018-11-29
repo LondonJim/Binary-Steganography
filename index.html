@@ -29,14 +29,14 @@
         RESET
       </label>
       <input id="reset" type='button'/>
-      <label id="reset-btn-label" for="reset" class="custom-button">
+      <label id="retrieve-btn-message" for="retrieve" class="custom-button">
         RETRIEVE MESSAGE
       </label>
-      <input id="reset" type='button'/>
+      <input id="retrieve" type='button'/>
     </div>
     <div class="middle-row">
-      <form style="padding: 5px 0px 0px 0px">
-        <textarea name="message-to-add" cols="64" rows="5" placeholder="Message to add to image..."></textarea><br>
+      <form id="add-message-form" style="padding: 5px 0px 0px 0px">
+        <textarea id="text-box" name="message-to-add" cols="64" rows="5" placeholder="Message to add to image..."></textarea><br>
         <label for="submit-message" class="custom-button" style="float: right;">
           ADD MESSAGE
         </label>
@@ -44,10 +44,10 @@
       </form>
     </div>
     <div class="bottom-row">
-      <label id="reset-btn-label" for="reset" class="custom-button" style="margin: -32px 280px 0px 0px; padding: 6px 12px">
+      <label id="save-btn" for="save" class="custom-button" style="margin: -32px 280px 0px 0px; padding: 6px 12px">
         SAVE IMAGE
       </label>
-      <input id="reset" type='button'/>
+      <input id="save" type='button'/>
     </div>
     <div id="message"></div>
     <script>

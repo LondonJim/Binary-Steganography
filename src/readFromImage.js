@@ -1,11 +1,14 @@
 class ReadFromImage {
 
+  constructor() {
+    this.parsedBin = []
+  }
+
   read(image = main.canvasSet.context,
        width = main.canvasSet.canvas.width,
        height = main.canvasSet.canvas.height
       ) {
     let textBin = []
-    let parsedBin = []
     let imageData = image.getImageData(0, 0, width, height)
 
     for (let i = 0; i < imageData.data.length; i+=4) {
@@ -13,17 +16,16 @@ class ReadFromImage {
     }
 
     textBin.forEach((el) => {
-      parsedBin.push(el.split('').pop())
+      this.parsedBin.push(el.split('').pop())
     })
 
-    this.convert(parsedBin)
-    return parsedBin
+    return this.parsedBin
   }
 
-  convert(binIntArray) {
+  convert() {
     let binText = ""
 
-    binIntArray.forEach((num) => {
+    this.parsedBin.forEach((num) => {
       binText = binText + "" + num
     })
 
@@ -34,13 +36,15 @@ class ReadFromImage {
     }).join("")
 
     let message = returnedString.substring(0, returnedString.indexOf('§§§'))
-    this.displayMessage(message)
+
+    this.parsedBin = []
 
     return message
   }
 
-  displayMessage(message) {
-    document.getElementById('message').innerHTML = message
+  displayMessage() {
+    this.read()
+    document.getElementById('text-box').innerHTML = this.convert()
   }
 
 }
