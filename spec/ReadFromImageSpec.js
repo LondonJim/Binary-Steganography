@@ -14,7 +14,8 @@ describe ('ReadFromImage', function() {
                      1, 0, 1, 0, 0, 1, 1, 1,
                      1, 0, 1, 0, 0, 1, 1, 1] // equates to "Hello§§§"
     spyOn(readFromImage, 'displayMessage')
-    expect(readFromImage.convert(mockArray)).toEqual("Hello")
+    readFromImage.parsedBin = mockArray
+    expect(readFromImage.convert()).toEqual("Hello")
   })
 
   it ('convert image data into string array of binary from red number range', function() {
