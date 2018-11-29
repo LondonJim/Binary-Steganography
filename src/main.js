@@ -13,7 +13,7 @@ class Main {
   events() {
     document.getElementById('reset').addEventListener("click", function() {
       this.canvasSet.context.drawImage(this.displayImage.image, 0, 0)
-      document.getElementById('text-box').value = ""
+      document.getElementById('text-box').innerHTML = ""
     }.bind(this))
     document.getElementById('retrieve').addEventListener("click", function() {
       this.readFromImage.displayMessage()
