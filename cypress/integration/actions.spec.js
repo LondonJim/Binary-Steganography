@@ -39,4 +39,11 @@ context('Actions', () => {
     cy.get('#text-box').should('have.value', '')
   })
 
+  it('can add a message to an image', () => {
+    cy.visit('/index.html')
+    cy.upload_file('Sample.jpg', '#file-upload')
+    cy.get('#text-box').type("test message")
+    cy.get('#add-message-form').click()
+  })
+
 })
