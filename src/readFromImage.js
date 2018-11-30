@@ -44,7 +44,7 @@ class ReadFromImage {
 
   displayMessage() {
     this.read()
-    document.getElementById('text-box').innerHTML = this.convert()
+    document.getElementById('text-box').value = this.convert()
   }
 
 }
