@@ -37,3 +37,5 @@ Copy path of `SpecRunner` to browser to run Jasmine tests
 I'm still playing around with encoding the message and retrieving it and there is refactoring I still need to do in terms of making it run more efficiently.
 
 Currently the text message you add is converted to the character key integer then to binary. The image is broken down into into pixels and then each pixel containing four pieces of information (RGBA) is broken down to binary. One bit at a time from the converted text is inserted into the first bit of the red pixels(at the moment). When reading the image the opposite is essentially done. Unless you knew what to look for there is no way you could tell the message was there.
+
+![Image description](./public/screenShot.png)
