@@ -24,4 +24,10 @@ context('Actions', () => {
     cy.visit('/index.html')
     cy.get('#reset-btn-label').click()
   })
+  it('can reset the text box', () => {
+    cy.visit('/index.html')
+    cy.get('#text-box').type("test message")
+    cy.get('#reset-btn-label').click()
+    cy.get('#text-box').should('be.empty')
+  })
 })
