@@ -1,6 +1,6 @@
 # Steganography
 
-Load in an image and be able to read and write hidden messages to the image.
+Load in an image and be able to read and write hidden messages to the image. Images fit to page but retain their full resolution when loading in and saving.
 
 ### How to use
 
