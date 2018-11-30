@@ -6,7 +6,7 @@ context('Actions', () => {
       .then(Cypress.Blob.base64StringToBlob)
       .then(blob => {
           const el = subject[0]
-          const testFile = new File([blob], fileName, { type: 'image/jpg' })
+          const testFile = new File([blob], fileName, { type: '' })
           const dataTransfer = new DataTransfer()
           dataTransfer.items.add(testFile)
           el.files = dataTransfer.files
@@ -20,14 +20,23 @@ context('Actions', () => {
     cy.upload_file('Sample.jpg', '#file-upload')
   })
 
+  it('can read a message from image', () => {
+    cy.visit('/index.html')
+    cy.upload_file('SampleWithMessage.png', '#file-upload')
+    cy.get('#retrieve-btn-message').click()
+    cy.get('#text-box').should('have.value', 'test message')
+  })
+
   it('can reset image', () => {
     cy.visit('/index.html')
     cy.get('#reset-btn-label').click()
   })
+
   it('can reset the text box', () => {
     cy.visit('/index.html')
     cy.get('#text-box').type("test message")
     cy.get('#reset-btn-label').click()
-    cy.get('#text-box').should('be.empty')
+    cy.get('#text-box').should('have.value', '')
   })
+
 })
