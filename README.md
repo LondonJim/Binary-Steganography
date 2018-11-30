@@ -22,6 +22,8 @@ A series of buttons and a text box will appear.
 
 `ADD MESSAGE` adds the message to the currently displayed image
 
+Also production build is deployed on Heroku [here](https://steganography-binary.herokuapp.com/index.html)
+
 
 ### Testing
 
