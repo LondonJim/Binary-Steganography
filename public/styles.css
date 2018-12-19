@@ -56,6 +56,12 @@ body {
   opacity: 1;
 }
 
+.alert {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
 input[type="file"] {
     display: none;
 }

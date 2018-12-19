@@ -12,13 +12,17 @@ class Main {
 
   events() {
     document.getElementById('reset').addEventListener("click", function() {
+      this.alertMessage("")
       this.canvasSet.context.drawImage(this.displayImage.image, 0, 0)
       document.getElementById('text-box').value = ""
+      this.alertMessage("Reset")
     }.bind(this))
     document.getElementById('retrieve').addEventListener("click", function() {
+      this.alertMessage("")
       this.readFromImage.displayMessage()
     }.bind(this))
     document.getElementById('save').addEventListener("click", function() {
+      this.alertMessage("Saved")
       let a = document.createElement('a')
       a.href = this.canvasSet.canvas.toDataURL('png')
       a.download = 'image'
@@ -29,6 +33,10 @@ class Main {
       let message = document.getElementById('text-box').value
       this.writeToImage.convert(message)
     }.bind(this))
+  }
+
+  alertMessage(message) {
+    document.getElementById('alert-message').innerHTML = message
   }
 
 }

@@ -1,6 +1,11 @@
 class WriteToImage {
 
   convert(text) {
+    if (text === "") {
+      document.getElementById('alert-message').innerHTML = "Please enter a message"
+      return
+    }
+
     text = text + "§§§" // indicates end of message
 
     let binIntArray = text.split('').map((char) => '00'.concat(char.charCodeAt(0)
@@ -34,6 +39,8 @@ class WriteToImage {
       imageData.data[i] = imageBinaryArray[i]
     }
     image.putImageData(imageData, 0, 0)
+
+    document.getElementById('alert-message').innerHTML = "Message Added"
 
     return imageData.data
   }

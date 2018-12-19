@@ -44,7 +44,12 @@ class ReadFromImage {
 
   displayMessage() {
     this.read()
-    document.getElementById('text-box').value = this.convert()
+    let message = this.convert()
+    if (message === "") {
+      document.getElementById('alert-message').innerHTML = "No Message Detected"
+    } else {
+      document.getElementById('text-box').value = message
+    }
   }
 
 }
