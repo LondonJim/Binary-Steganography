@@ -1,6 +1,8 @@
 describe ('WriteToImage', function() {
 
   beforeEach(function(){
+    let dummyElement = document.createElement('div')
+    document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement)
     writeToImage = new WriteToImage
   })
 
